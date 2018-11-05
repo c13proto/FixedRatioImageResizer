@@ -40,27 +40,28 @@ namespace FixedRatioImageResizer
                 //OKボタンがクリックされたとき、選択されたファイル名をすべて表示する
                 foreach (string fn in ofd.FileNames)
                     ImageFiles.Add(fn);
-                if (ImageFiles.Count > 0) 
-                    pictureBox1.ImageLocation= ImageFiles[0];                
-
+                if (ImageFiles.Count > 0)
+                {
+                    pictureBox1.ImageLocation = ImageFiles[0];
+                    button_start.Enabled = true;
+                    button_start.BackColor = Color.LightBlue;
+                    label_selected.Text = ImageFiles.Count.ToString() + " file selected";
+                }
             }
         }
 
         private void button_start_Click(object sender, EventArgs e)
         {
-            if (ImageFiles.Count > 0)
+            int dstWidth = Int16.Parse(textBox_width.Text);
+            int dstHeight = Int16.Parse(textBox_height.Text);
+            foreach (string file in ImageFiles)
             {
-                int dstWidth = Int16.Parse(textBox_width.Text);
-                int dstHeight = Int16.Parse(textBox_height.Text);
-                foreach (string file in ImageFiles)
-                {
-                    makeResizeImage(file,dstWidth, dstHeight);
-                }
-                string fileType = Path.GetExtension(ImageFiles[0]);
-                pictureBox1.ImageLocation = ImageFiles[0].Replace(fileType, "_" + dstWidth + "x" + dstHeight + ".jpg");
-                MessageBox.Show("complete!");
+                makeResizeImage(file,dstWidth, dstHeight);
             }
-            else MessageBox.Show("please open image files before start");
+            string fileType = Path.GetExtension(ImageFiles[0]);
+            pictureBox1.ImageLocation = ImageFiles[0].Replace(fileType, "_" + dstWidth + "x" + dstHeight + ".jpg");
+            MessageBox.Show("complete!");
+
         }
 
         private void makeResizeImage(string src, int dstWidth, int dstHeight)
