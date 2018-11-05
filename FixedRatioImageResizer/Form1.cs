@@ -73,16 +73,17 @@ namespace FixedRatioImageResizer
             int resizeWidth, resizeHeight;//まずは枠ぴったりにつくる
             if (dstWidth * orgImage.Height / orgImage.Width > dstHeight)//高さで合わせるパターン
             {
-                resizeHeight = dstHeight;
+                resizeHeight = dstHeight -2 * Int16.Parse(textBox_frame.Text);//フレーム幅だけ小さくする
                 resizeWidth = resizeHeight * orgImage.Width / orgImage.Height;
+
             }
             else
             {
-                resizeWidth = dstWidth;
+                resizeWidth = dstWidth - 2 * Int16.Parse(textBox_frame.Text);
                 resizeHeight = resizeWidth * orgImage.Height / orgImage.Width;
             }
-            resizeWidth -= 2 * Int16.Parse(textBox_frame.Text);//フレーム幅だけ小さくする
-            resizeHeight -= 2 * Int16.Parse(textBox_frame.Text);
+            
+
 
             Bitmap resizeImage = getResizeBitmap(orgImage, resizeWidth, resizeHeight);
 
