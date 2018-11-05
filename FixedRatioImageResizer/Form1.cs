@@ -56,6 +56,8 @@ namespace FixedRatioImageResizer
                 {
                     makeResizeImage(file,dstWidth, dstHeight);
                 }
+                string fileType = Path.GetExtension(ImageFiles[0]);
+                pictureBox1.ImageLocation = ImageFiles[0].Replace(fileType, "_" + dstWidth + "x" + dstHeight + ".jpg");
                 MessageBox.Show("complete!");
             }
             else MessageBox.Show("please open image files before start");
@@ -88,7 +90,7 @@ namespace FixedRatioImageResizer
             int paddHeight = (baseImage.Height - resizeImage.Height) / 2;
 
             Graphics g = Graphics.FromImage(baseImage);
-            g.Clear(Color.White);
+            g.Clear(Color.FromArgb(Int16.Parse(textBox_r.Text), Int16.Parse(textBox_g.Text), Int16.Parse(textBox_b.Text)));
             g.DrawImage(resizeImage, new Point(paddWidth, paddHeight));
             string fileType = Path.GetExtension(src);
             baseImage.Save(src.Replace(fileType,"_"+dstWidth+"x"+dstHeight+".jpg"));
