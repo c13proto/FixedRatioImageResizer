@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FixedRatioImageResizer));
             this.button_open = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,9 +49,9 @@
             // 
             // button_open
             // 
-            this.button_open.Location = new System.Drawing.Point(12, 27);
+            this.button_open.Location = new System.Drawing.Point(13, 24);
             this.button_open.Name = "button_open";
-            this.button_open.Size = new System.Drawing.Size(91, 20);
+            this.button_open.Size = new System.Drawing.Size(91, 23);
             this.button_open.TabIndex = 0;
             this.button_open.Text = "select images";
             this.button_open.UseVisualStyleBackColor = true;
@@ -95,7 +96,7 @@
             this.button_start.Enabled = false;
             this.button_start.Location = new System.Drawing.Point(13, 164);
             this.button_start.Name = "button_start";
-            this.button_start.Size = new System.Drawing.Size(89, 31);
+            this.button_start.Size = new System.Drawing.Size(89, 23);
             this.button_start.TabIndex = 5;
             this.button_start.Text = "START";
             this.button_start.UseVisualStyleBackColor = true;
@@ -114,9 +115,9 @@
             this.label_frame.AutoSize = true;
             this.label_frame.Location = new System.Drawing.Point(11, 87);
             this.label_frame.Name = "label_frame";
-            this.label_frame.Size = new System.Drawing.Size(62, 12);
+            this.label_frame.Size = new System.Drawing.Size(76, 12);
             this.label_frame.TabIndex = 7;
-            this.label_frame.Text = "frameWidth";
+            this.label_frame.Text = "padding(pixel)";
             // 
             // label3
             // 
@@ -153,7 +154,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(105, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(110, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -199,6 +200,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_open);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FixedRatioImageResizer";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "FixedRatioImageResizer";

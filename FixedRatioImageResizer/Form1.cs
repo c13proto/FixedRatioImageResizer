@@ -31,7 +31,7 @@ namespace FixedRatioImageResizer
             //複数のファイルを選択できるようにする
             ofd.Multiselect = true;
             // フィルタ
-            ofd.Filter = "画像ファイル|*.bmp;*.gif;*.jpg;*.png|全てのファイル|*.*";
+            ofd.Filter = "image file|*.bmp;*.gif;*.jpg;*.png;*.jpeg;*.ico|all|*.*";
             //ダイアログを表示する
             if (ofd.ShowDialog() == DialogResult.OK)
             {
