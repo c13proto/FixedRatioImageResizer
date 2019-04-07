@@ -42,7 +42,7 @@ namespace FixedRatioImageResizer
                     ImageFiles.Add(fn);
                 if (ImageFiles.Count > 0)
                 {
-                    pictureBox1.ImageLocation = ImageFiles[0];
+                    pictureBox.ImageLocation = ImageFiles[0];
                     button_start.Enabled = true;
                     button_start.BackColor = Color.LightBlue;
                     label_selected.Text = ImageFiles.Count.ToString() + " file selected";
@@ -59,7 +59,9 @@ namespace FixedRatioImageResizer
                 makeResizeImage(file,dstWidth, dstHeight);
             }
             string fileType = Path.GetExtension(ImageFiles[0]);
-            pictureBox1.ImageLocation = ImageFiles[0].Replace(fileType, "_" + dstWidth + "x" + dstHeight + ".jpg");
+            if (Int16.Parse(textBox_a.Text) < 255)
+                pictureBox.ImageLocation = ImageFiles[0].Replace(fileType, "_" + dstWidth + "x" + dstHeight + ".png");
+            else pictureBox.ImageLocation = ImageFiles[0].Replace(fileType, "_" + dstWidth + "x" + dstHeight + ".jpg");
             MessageBox.Show("complete!");
 
         }
@@ -92,11 +94,18 @@ namespace FixedRatioImageResizer
             int paddHeight = (baseImage.Height - resizeImage.Height) / 2;
 
             Graphics g = Graphics.FromImage(baseImage);
-            g.Clear(Color.FromArgb(Int16.Parse(textBox_r.Text), Int16.Parse(textBox_g.Text), Int16.Parse(textBox_b.Text)));
+            g.Clear(Color.FromArgb(
+                Int16.Parse(textBox_a.Text),
+                Int16.Parse(textBox_r.Text),
+                Int16.Parse(textBox_g.Text),
+                Int16.Parse(textBox_b.Text))
+                );
             g.DrawImage(resizeImage, new Point(paddWidth, paddHeight));
             string fileType = Path.GetExtension(src);
-            baseImage.Save(src.Replace(fileType,"_"+dstWidth+"x"+dstHeight+".jpg"));
-            
+            if (Int16.Parse(textBox_a.Text) < 255)
+                baseImage.Save(src.Replace(fileType, "_" + dstWidth + "x" + dstHeight + ".png"));
+            else baseImage.Save(src.Replace(fileType, "_" + dstWidth + "x" + dstHeight + ".jpg"));
+
             orgImage.Dispose();
             baseImage.Dispose();
             resizeImage.Dispose();

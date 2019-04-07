@@ -1,1 +1,1 @@
-## be careful. this software overwrite original image!
+output same directory. filename is (original file name)_(width)x(height)

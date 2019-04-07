@@ -41,17 +41,18 @@
             this.textBox_r = new System.Windows.Forms.TextBox();
             this.textBox_b = new System.Windows.Forms.TextBox();
             this.textBox_g = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label_selected = new System.Windows.Forms.Label();
             this.label_message = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.textBox_a = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // button_open
             // 
             this.button_open.Location = new System.Drawing.Point(13, 24);
             this.button_open.Name = "button_open";
-            this.button_open.Size = new System.Drawing.Size(91, 23);
+            this.button_open.Size = new System.Drawing.Size(110, 23);
             this.button_open.TabIndex = 0;
             this.button_open.Text = "select images";
             this.button_open.UseVisualStyleBackColor = true;
@@ -96,7 +97,7 @@
             this.button_start.Enabled = false;
             this.button_start.Location = new System.Drawing.Point(13, 164);
             this.button_start.Name = "button_start";
-            this.button_start.Size = new System.Drawing.Size(89, 23);
+            this.button_start.Size = new System.Drawing.Size(110, 23);
             this.button_start.TabIndex = 5;
             this.button_start.Text = "START";
             this.button_start.UseVisualStyleBackColor = true;
@@ -106,7 +107,7 @@
             // 
             this.textBox_frame.Location = new System.Drawing.Point(13, 102);
             this.textBox_frame.Name = "textBox_frame";
-            this.textBox_frame.Size = new System.Drawing.Size(30, 19);
+            this.textBox_frame.Size = new System.Drawing.Size(22, 19);
             this.textBox_frame.TabIndex = 8;
             this.textBox_frame.Text = "1";
             // 
@@ -124,9 +125,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(11, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 12);
+            this.label3.Size = new System.Drawing.Size(103, 12);
             this.label3.TabIndex = 9;
-            this.label3.Text = "background (r,g,b)";
+            this.label3.Text = "background (r,g,b,a)";
             // 
             // textBox_r
             // 
@@ -152,14 +153,14 @@
             this.textBox_g.TabIndex = 13;
             this.textBox_g.Text = "255";
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(110, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox.Location = new System.Drawing.Point(129, 9);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(31, 35);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox.TabIndex = 14;
+            this.pictureBox.TabStop = false;
             // 
             // label_selected
             // 
@@ -178,13 +179,22 @@
             this.label_message.Size = new System.Drawing.Size(0, 12);
             this.label_message.TabIndex = 16;
             // 
+            // textBox_a
+            // 
+            this.textBox_a.Location = new System.Drawing.Point(99, 139);
+            this.textBox_a.Name = "textBox_a";
+            this.textBox_a.Size = new System.Drawing.Size(23, 19);
+            this.textBox_a.TabIndex = 17;
+            this.textBox_a.Text = "255";
+            // 
             // FixedRatioImageResizer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(592, 401);
+            this.ClientSize = new System.Drawing.Size(488, 238);
+            this.Controls.Add(this.textBox_a);
             this.Controls.Add(this.label_message);
             this.Controls.Add(this.label_selected);
             this.Controls.Add(this.textBox_g);
@@ -199,12 +209,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_open);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FixedRatioImageResizer";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "FixedRatioImageResizer";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,9 +234,10 @@
         private System.Windows.Forms.TextBox textBox_r;
         private System.Windows.Forms.TextBox textBox_b;
         private System.Windows.Forms.TextBox textBox_g;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label label_selected;
         private System.Windows.Forms.Label label_message;
+        private System.Windows.Forms.TextBox textBox_a;
     }
 }
 
